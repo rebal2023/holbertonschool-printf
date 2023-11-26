@@ -1,0 +1,94 @@
+.TH _PRINTF 11-26-2023 "0.1" "Library Function Manual"
+
+.SH NAME
+_printf - format and print data
+
+.SH SYNOPSIS
+.SH ""
+
+.SH DESCRIPTION
+
+The function _printf is a reimplementation of the standard printf function made as a project in the software development program of Holberton School.
+
+.B d, i 
+.RS
+The int argument is converted to signed decimal notation.
+
+.RE 
+.B o, u, x, X
+.RS
+The unsigned int argument is converted to unsigned octal (o), unsigned decimal (u), or unsigned hexadecimal (x and X) notation, "x" is to lowercase and "X" is to uppercase.
+
+.RE 
+.B b
+.RS
+Prints a converted number to binary (base 2).
+
+.RE
+.B c
+.RS
+The int argument is converted to an unsigned char, and the resulting character is written. 
+
+.RE
+.B s
+.RS
+Prints a string assign it in parameter's position. If string does not exist prints "(null)".
+
+.RE
+.B p
+.RS
+The void * pointer argument is printed in hexadecimal (0x + %lx), prints an address.
+
+.RE
+.B r 
+.RS
+Prints a reversed string.
+
+.RE
+.B R
+.RS
+Converts a string to rot13.
+
+.RE
+.B %
+.RS
+A '%' is written.No argument is converted.The complete conversion specification is '%%'.
+
+.SH RETURN VALUE
+
+Upon successful return, these functions return the number of characters printed. 
+
+.SH EXAMPLES
+
+Use the following code to call the _printf() function:
+
+#include "main.h"
+
+int main() 
+.TP
+\r{
+.TP
+_printf("Hello");
+.TP
+return (0);
+.TP
+\r}
+
+.TP
+#include "main.h"
+.TP
+int main()
+.TP
+\r{
+.TP
+_printf("Holberton: %i", 2023);
+.TP
+return (0);
+.TP
+\r}
+.TP
+The output will be: Holberton 2023
+.TP
+
+.SH AUTHORS
+.SH ""
