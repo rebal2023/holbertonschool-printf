@@ -1,5 +1,3 @@
-#include <stdarg.h>
-#include <unistd.h>
 #include "main.h"
 /**
 * _printf - function similar to printf
@@ -15,8 +13,6 @@ if (!format || !format[0])
 return (-1);
 while (*format != '\0')
 {
-  if (*format == '%' && *format == '\0')
-			return (-1);
 if (*format != '%')
 {
 i += _putchar(*format);
