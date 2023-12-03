@@ -4,6 +4,7 @@
  * @str: string to be printed
  * Return: string
  */
+
 int print_string(const char *str)
 {
 	int i = 0;
