@@ -2,13 +2,13 @@
 #include <unistd.h>
 #include "main.h"
 /**
-* _printf - function similar to printf
-* @format: const char
-* Return: int
+* _printf - function my printf
+* @format: string whit format to print
+* Return: the number of characters
 */
 int _printf(const char *format, ...)
 {
-int i = 0;
+int count = 0;
 va_list args;
 va_start(args, format);
 if (!format || !format[0])
@@ -17,7 +17,7 @@ while (*format != '\0')
 {
 if (*format != '%')
 {
-i += _putchar(*format);
+count += _putchar(*format);
 }
 else
 {
@@ -26,16 +26,16 @@ if (*format == 'c')
 {
 char c = va_arg(args, int);
 _putchar(c);
-i++;
+count++;
 }
 else if (*format == 's')
 {
 char *str = va_arg(args, char *);
-i += print_string(str);
+count += print_string(str);
 }
 else if (*format == '%')
 {
-i += _putchar('%');
+count += _putchar('%');
 }
 else if (*format == 'd' || *format == 'i')
 {
@@ -43,11 +43,11 @@ int num = va_arg(args, int);
 char buffer[20];
 int length = snprintf(buffer, sizeof(buffer), "%d", num);
 write(1, buffer, length);
-i += length;
+count += length;
 }
 }
 format++;
 }
 va_end(args);
-return (i);
-}
+return (count);
+}~
