@@ -14,9 +14,7 @@ return (-1);
 while (*format != '\0')
 {
 if (*format != '%')
-{
 i += _putchar(*format);
-}
 else
 {
 format++;
@@ -32,9 +30,7 @@ char *str = va_arg(args, char *);
 i += print_string(str);
 }
 else if (*format == '%')
-{
 i += _putchar('%');
-}
 else if (*format == 'd' || *format == 'i')
 {
 int num = va_arg(args, int);
